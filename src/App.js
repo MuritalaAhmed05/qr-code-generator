@@ -57,9 +57,11 @@ function App() {
         <div className="mt-7">
           <h3 className="text-white font-bold pb-4">Your QR Code:</h3>
           <img src={qrCodeUrl} alt="Generated QR Code" />
-          <a href={qrCodeUrl} download="qrcode.png" className="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Download QR Code
-          </a>
+          <div className="flex justify-center items-center">
+            <a href={qrCodeUrl} download="qrcode.png" className="self-center mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Download QR Code
+            </a>
+          </div>
         </div>
       )}
     </div>
