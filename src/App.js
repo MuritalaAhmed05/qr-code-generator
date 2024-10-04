@@ -25,7 +25,8 @@ function App() {
   return (
     <div className="flex flex-col justify-center items-center px-9 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] min-h-screen">
       <h1 className="text-white font-bold text-[2rem] sm:text-[3rem] mb-9"> QR Code Generator</h1>
-      <div className="flex flex-col w-full sm:w-1/2 py-3">
+
+      <div className="flex flex-col w-full sm:w-[20%] py-3">
         <label className="text-gray-500 font-bold text-xs sm:text-sm">Enter word/text: </label>
         <input
           className="w-full rounded-lg outline-none border-2 border-gray-500 bg-blue-400 p-2 font-bold text-white pl-3"
@@ -33,7 +34,8 @@ function App() {
           onChange={(e) => setWord(e.target.value)}
         />
       </div>
-      <div className="flex flex-col w-full sm:w-1/2 py-3">
+
+      <div className="flex flex-col w-full sm:w-[20%] py-3">
         <label className="text-gray-500 font-bold text-xs sm:text-sm">Size (px): </label>
         <input
           type="number"
@@ -42,7 +44,8 @@ function App() {
           className="w-full rounded-lg outline-none border-2 border-gray-500 bg-blue-400 p-2 font-bold text-white pl-3"
         />
       </div>
-      <div className="flex flex-col w-full sm:w-1/2 py-3">
+
+      <div className="flex flex-col w-full sm:w-[20%] py-3">
         <label className="text-gray-500 font-bold text-xs sm:text-sm">Background color (hex): </label>
         <input
           type="text"
@@ -51,11 +54,16 @@ function App() {
           className="w-full rounded-lg outline-none border-2 border-gray-500 bg-blue-400 p-2 font-bold text-white pl-3"
         />
       </div>
-     
+
       {qrCodeUrl && (
         <div className="mt-7">
           <h3 className="text-white font-bold pb-4">Your QR Code:</h3>
           <img src={qrCodeUrl} alt="Generated QR Code" />
+
+          {/* Download button */}
+          <a href={qrCodeUrl} download="qrcode.png" className="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Download QR Code
+          </a>
         </div>
       )}
     </div>
